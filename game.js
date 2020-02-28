@@ -236,7 +236,7 @@ var Game = function(p1_name, p2_name) {
 			let icon = Object.values(cards[i])[0].icon;
 			let key = Object.keys(cards[i])[0];
 			const card_html = `
-				<button class="btn ncard" data-id="${i}" data-slug="${slug}">
+				<button class="btn btn-outline-dark ncard" data-id="${i}" data-slug="${slug}">
 					<div class="icon"><img src="imgs/${icon}" alt="${key}"></div>
 					<div class="title">${title}</div>
 				</button>

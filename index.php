@@ -10,7 +10,8 @@
 	<style>
 	.ncard{
 		width: 50px;
-		height: 100px;
+		height: 110px;
+		margin: 2px;
 	}
 	.battle_wrap{
 		width: 100%;
@@ -31,21 +32,32 @@
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-	<script src='game.js?e'></script>
+	<script src='game.js?i'></script>
 </head>
 <body>
 	<div class="container">
 		<div class="row" style="margin-top:10px;">
 			<div class="col-12">				
 				<div class="upsidedown">
-					<div class="row">
-						<div class="col-6">
-							<input type="text" name="p1" class="p1 name">
+
+					<form>
+						<div class="form-row align-items-center">
+							<div class="col-6 my-1">
+								<label class="sr-only" for="inlineFormInputName">Name</label>
+								<input type="text" class="form-control p1 name" id="inlineFormInputName" name="p1">
+							</div>
+							<div class="col-6 my-1">
+								<label class="sr-only" for="inlineFormInputGroupUsername">防</label>
+								<div class="input-group">
+									<div class="input-group-prepend">
+										<div class="input-group-text">鎧甲</div>
+									</div>
+									<input type="text" class="form-control" id="p1_shield" name="p1_shield">
+								</div>
+							</div>
 						</div>
-						<div class="col-6">
-							鎧甲：<input type="text" name="p1_shield" id="p1_shield">
-						</div>
-					</div>
+					</form>
+
 					<div class="progress">
 						<div id="p1_healthbar" class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
 					</div>
@@ -61,14 +73,25 @@
 					</div>
 				</div>
 				<div>
-					<div class="row">
-						<div class="col-6">
-							<input type="text" name="p2" class="p2 name" value="">
+
+					<form>
+						<div class="form-row align-items-center">
+							<div class="col-6 my-1">
+								<label class="sr-only" for="inlineFormInputName">Name</label>
+								<input type="text" class="form-control p2 name" id="inlineFormInputName" name="p2">
+							</div>
+							<div class="col-6 my-1">
+								<label class="sr-only" for="inlineFormInputGroupUsername">防</label>
+								<div class="input-group">
+									<div class="input-group-prepend">
+										<div class="input-group-text">鎧甲</div>
+									</div>
+									<input type="text" class="form-control" id="p2_shield" name="p2_shield">
+								</div>
+							</div>
 						</div>
-						<div class="col-6">
-							鎧甲：<input type="text" name="p2_shield" id="p2_shield">
-						</div>
-					</div>					
+					</form>
+			
 					<div class="progress">
 						<div id="p2_healthbar" class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
 					</div>
