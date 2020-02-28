@@ -381,5 +381,9 @@ $(function(){
 		}
 		g.renderPlayerStatus();
 		g.endPhase(); 
-	})
+	});
+
+	$(document).on('click', '.reboot', function(e){
+		window.location.reload();
+	});
 })
