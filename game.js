@@ -210,7 +210,7 @@ var Game = function(p1_name, p2_name) {
 	this.deck = new Deck();
 
 	this.msg = function (msg) {
-		$('.battle').html(msg);
+		$('.battle').html('<div class="alert alert-info" role="alert">'+msg+'</div>');
 	}
 
 	this.drawPhase = function (player){
@@ -236,7 +236,7 @@ var Game = function(p1_name, p2_name) {
 			let icon = Object.values(cards[i])[0].icon;
 			let key = Object.keys(cards[i])[0];
 			const card_html = `
-				<button class="ncard" data-id="${i}" data-slug="${slug}">
+				<button class="btn ncard" data-id="${i}" data-slug="${slug}">
 					<div class="icon"><img src="imgs/${icon}" alt="${key}"></div>
 					<div class="title">${title}</div>
 				</button>
@@ -264,6 +264,15 @@ var Game = function(p1_name, p2_name) {
 		$('.ncards.p'+player.sort+' button').prop('disabled', false);
 	}
 
+	this.renderNumberOfCards = function() {
+		const total = this.deck.getNumberOfCards();
+		let render_total = '';
+		for (let i = 0; i < total; i++) {
+			render_total += '●';
+		}
+		$('.NumberOfCards').html(render_total);
+	}
+
 	this.renderPlayerStatus = function() {
 		// P1
 		$('#p1_healthbar').css('width', this.p1.getHealth()+'%').html(this.p1.getHealth());
@@ -287,7 +296,7 @@ var Game = function(p1_name, p2_name) {
 		}
 		$('#p2_shield').val(this.p2.getShield());
 
-		$('.NumberOfCards').val(this.deck.getNumberOfCards());
+		this.renderNumberOfCards();
 	}
 	// 卡牌發完
 	this.outOfCards = function() {
